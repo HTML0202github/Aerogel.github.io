@@ -1,0 +1,651 @@
+
+/* 
+<!--第一區header-->
+<!--第二區首頁-->
+<!--第三區paper list-->
+<!--第四區Exp operation-->
+<!--第五區Analysis software operation -->
+<!--第六區Footer-->
+RWD手機版
+ */
+
+
+ 
+/* 版面設定 */
+/*清除默認邊距*/
+
+*{
+    margin:0px; 
+    padding:0px;
+    box-sizing: border-box;/*網頁配置會有一些間隙*/
+    font-family: 'Nunito', sans-serif;
+    border:none;
+    text-decoration: none;/*預設超鏈接的樣式*/
+    transition: 0.3s all linear;/*鏈接會有一些的效果*/
+    font-size:25px;
+    font-family: 'Times New Roman'
+}
+
+a:hover{
+    font-size:22px;
+    font-weight:900px;
+    color:rgb(255, 255, 255);
+    margin-left: 10px;
+    transition: 0.3s;
+    padding:0px;
+}
+
+header{
+    height:45px;
+    font-size:20px;
+    position: fixed;/*把header固定在最上方*/
+    top:0; left:0; right:0;/*對齊在最上面*/
+    z-index:100;/*大的z-index會出現在最上層*/
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background: rgb(0, 0, 0);
+    box-shadow: 10px 1rem 1rem rgba(0, 0, 0, 0.1);/*增加一些陰影*/
+    opacity: 0.9;
+}
+
+h1{
+    text-align: center;
+    padding:10px;
+    font-size: 40px;
+    font-family: 'Times New Roman'
+}
+
+/*整個網頁的背景圖片*/
+body{
+    background:rgb(137, 146, 199);
+    height:2500px;
+}
+
+/*語言部分的樣式*/
+header .language{
+    /*會自動依照網頁大小改變寬度*/
+    width:100%;
+    background-color:#100f0f9c;
+}
+
+/*language裏面的是一張圖片，改變位移顯示結果*/
+header .language>ul{
+    float:right;
+    margin-right: 35px;
+    margin-top: 5px;
+    
+
+}
+
+header .language>ul>li{
+    /*display:block；是直的，display:inline block是橫的；display:inline-flex會滑到下一個如果頁面過小的話*/
+
+    float:left;
+    /*把display:inline在nav出現了問題，換成float:left li標簽也是會一樣變成水平的;*/
+    width:80px;
+    height:30px;
+    background-color: red;
+    margin-left:5px;
+    list-style:none;/*教學裏面有出現bullet dot所以那邊需要去除dot*/
+
+}
+
+/*找到li的第一個標簽*/
+.language>ul>li:nth-of-type(1){
+    background: url(../image/lag.png);
+}
+
+/*如果想要鼠標觸碰時有hover只需要shift向右邊*/
+.language>ul>li:nth-of-type(1):hover{
+    background: url(../image/lag.png) -78px 0px;
+}
+
+.language>ul>li:nth-of-type(2){
+    background: url(../image/lag.png) no-repeat 0px -33px;
+}
+
+.language>ul>li:nth-of-type(2):hover{
+    background: url(../image/lag.png) -78px -33px;
+}
+
+.language>ul>li:nth-of-type(3){
+    background: url(../image/lag.png) no-repeat 0px -67px;
+}
+
+.language>ul>li:nth-of-type(3):hover{
+    background: url(../image/lag.png) -78px -67px;
+}
+
+.language>ul>li:nth-of-type(4){
+    background: url(../image/lag.png) no-repeat 0px -101px;
+}
+
+.language>ul>li:nth-of-type(4):hover{
+    background: url(../image/lag.png) -78px -101px;
+}
+
+.language>ul>li:nth-of-type(5){
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+    color:white;
+    font-size:14px;
+    /*圖片小會出現多個所以要加上no repeat*/
+    background:url(../image/b7.jpg) no repeat 3px 0;
+    background-color:#3c87c7;
+}
+
+
+header .navbar{
+    width:100%;
+    height:50px;
+    display: block;
+
+}
+
+
+/*導覽列顔色*/
+header .navbar a{
+    font-size:22px;
+    font-weight: normal;
+    color:rgb(9, 152, 152);
+    padding-left:10px;
+    
+}
+
+header .navbar a:hover{
+    font-size:22px;
+    font-weight:900;
+    color:rgb(35, 134, 255);
+    margin-left: 10px;
+    transition: 0.3s;
+    background-color:rgb(255, 255, 255);
+    padding:18px 10px 18px 10px;
+}
+
+
+
+
+
+/* 第二區 */
+/* 這個是所有section的padding */
+section{
+    padding:20px;
+}
+
+.home{
+    height:100px;
+    margin: auto;
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    min-height: 420px;
+    margin-top: 50px;
+    background:rgb(0, 0, 0);
+    background-size: cover;/*覆蓋整個畫面*/
+    background-position:right;
+    overflow: hidden;
+    box-shadow:0 10px 10px black;
+    margin-bottom: 20px;
+
+}
+.home .content{
+    flex:1 1 30px;/*flex:1 1會自動去排版*/
+    height:400px;
+    width:500px;
+    padding:10px;
+    background: rgb(0, 0, 0);
+    overflow: hidden;
+    /*css gradient裏面設計出來的漸層效果*/
+    /* background: linear-gradient(90deg, rgba(9,9,55,0.8407563709077381) 11%, rgba(19,32,29,0.02843144093574934) 100%, rgba(3,2,3,0.529832001159839) 100%);  */
+}
+
+/*滷肉飯的圖片晃動需要搭配下面的@keyframes設定moving*/
+.home .image{
+    flex:1 1 30px;
+}
+.home .image img{
+    width:600px;
+    height: 400px;
+    /* padding:10px; */
+    /* 增加一個動畫一直無限的左右晃動 */
+    animation: moving 3s linear infinite;
+
+}
+
+.home .content h1{
+    font-size:25px;
+    color:rgb(255, 208, 0);
+    text-align: center;
+}
+
+
+
+
+.home .content ul{
+    margin-left:20px;
+    margin-top:10px;
+    text-decoration: none;
+    margin: auto;
+    list-style: none;
+}
+
+.home .content li{
+    margin:5px;
+    width:auto;
+    text-align: center;
+    border-style:solid;
+    color:rgb(255, 208, 0);
+    text-decoration: none;
+    padding: 5px;
+
+}
+
+
+.home .content li a{
+    text-decoration: none;
+    color:rgb(255, 208, 0);
+    font-size:15px;
+}
+
+.home .content a:hover{
+    font-size:20px;
+    font-weight:900;
+    color:rgb(255, 255, 255);
+    margin-left: 10px;
+    transition: 0.3s;
+    padding:18px 10px 18px 10px;
+}
+
+
+/* 内文 */
+.home .content p{
+    font-size:20px;
+    color:rgb(255, 208, 0);
+    padding:10px;
+    margin-bottom:20px;
+    font-weight:bold;
+}
+
+/* 0，3，0，3一直前後移動 */
+@keyframes moving{
+    0%{transform:translateX(0rem);}
+    50%{transform:translateX(3rem);}
+    100%{transform:translateX(0rem);}
+}
+
+
+
+
+
+
+/* 第三區 */
+
+
+
+
+.nav{
+    
+    display:flex;
+    flex-wrap:wrap;
+    width: auto;
+    text-align: center;
+    height:80px;
+    background-color:rgb(0, 0, 0) ;
+    margin-top: 10px;
+    overflow: hidden;
+    box-shadow:0 10px 10px black;
+}
+
+.nav .navbar{
+    width:100%;
+}
+
+
+/*導覽列顔色*/
+.nav .navbar a{
+    flex:1 1 30px;
+    margin: auto;
+    font-size:22px;
+    font-weight: normal;
+    color:rgb(255, 208, 0);
+    padding-left:10px;
+    
+}
+
+.nav .navbar a:hover{
+    font-size:22px;
+    font-weight:900;
+    color:rgb(106, 38, 83);
+    margin-left: 10px;
+    transition: 0.3s;
+    padding:18px 10px 18px 10px;
+}
+
+
+
+
+
+
+
+
+/* 第四區 */
+
+.speciality .heading{
+    box-shadow:0 10px 10px black;
+    text-align: center;
+    padding:10px;
+    font-size: 40px;
+    margin-bottom:10px;
+    padding:30px;
+    font-family: 'Times New Roman';
+
+}
+
+
+
+.speciality .box-container{
+    /* flex wrap就會變成可以依據畫面的大小進行修改 */
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+}
+
+/* 裏面一共有三格，看是要做多大 */
+.speciality .box-container .box{
+    
+    flex: 1 1 30px;
+    position: relative;
+    /* 不要跑出來所以用hidden，如果想要看到剩下的話可以使用scroll */
+    overflow: hidden;
+    /* 陰影 */
+    box-shadow: 0 10px 10px black;
+    /* 做邊框 */
+    border:1px solid black;
+    /* 換一個點擊樣式 */
+    cursor:pointer;
+    /* 有點圓弧狀 */
+    border-radius: 10px;
+    background-color: white;
+}
+
+
+
+
+
+.speciality .box-container .box .image{
+
+    height:auto;
+    width:80%;
+    object-fit:cover;
+    position:absolute;
+    top:8%;
+    left:10%;
+}
+/* absolute的是不會變化位置的,只需要一個relative從-100-0%就可以有切換的效果了 */
+
+
+/* 設置網頁盒子的位置 */
+.speciality .box-container .box .content{
+    text-align: center;
+    background-color:rgb(255, 255, 255);
+    padding:10px;
+    height:250px;
+    position:relative;
+    background-color: rgb(255, 208, 0);
+    left:-100%;
+   
+}
+
+/* 設置盒子裏面圖片的大小 */
+/* .speciality .box-container .box .content img{
+    width:180px;
+    height:120px;
+   margin:10px;
+} */
+.speciality .box-container .box .content h3{
+    font-size:25px;
+    color:rgb(9, 152, 152);
+    margin-bottom: 10px;
+}
+
+.speciality .box-container .box .content h4{
+    font-size:50px;
+    color:rgb(152, 9, 9);
+    line-height:230px;
+}
+
+.speciality .box-container .box .content p{
+    font-size:18px;
+    color:rgb(0, 0, 0);
+}
+
+
+.speciality .box-container .box:hover .content{
+    text-align: center;
+    position:relative;
+    background-color: rgb(255, 208, 0);
+    left:0%;
+}
+
+.Papertable{
+    margin:30px;
+    padding:5px;
+    width:95%;
+    height:250px;
+    background-color: black;
+    overflow:scroll;
+    box-shadow:0 10px 10px black
+}
+
+.Papertable .box-container table{
+    margin:auto;
+}
+.Papertable .box-container td{
+    width: 80px;
+    height: 30px;
+    border: 1px solid grey;
+    text-align: center;
+    vertical-align: center;
+    font-size: 12px;
+    color: rgb(255, 208, 0)
+}
+
+
+.Papertable .box-container a{
+
+    font-size: 12px;
+    color: rgb(255, 208, 0);
+}
+
+.Papertable .box-container .longName{
+    width:900px;
+}
+
+.Papertable .box-container .link{
+    width:80px;
+}
+
+.Papertable .box-container .name{
+    font-weight:bold;
+}
+
+
+
+
+
+
+
+
+.instrument .heading{
+    box-shadow:0 10px 10px black;
+    text-align: center;
+    padding:10px;
+    font-size: 40px;
+    margin-bottom:10px;
+    padding:30px;
+    font-family: 'Times New Roman';
+
+}
+
+.instrument nav {
+
+  font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+  line-height: 1.5;
+  margin: 50px ; /*for display only*/
+
+  width: 300px;
+  -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+     -moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+          box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+
+.instrument .box-container{
+    /* flex wrap就會變成可以依據畫面的大小進行修改 */
+    display: inline-flex;
+    justify-content: space-around;
+    gap:120px;
+}
+
+/* 裏面一共有三格，看是要做多大 */
+.instrument .box-container .box{
+    
+
+    /* 不要跑出來所以用hidden，如果想要看到剩下的話可以使用scroll */
+    overflow: hidden;
+    
+    /* 換一個點擊樣式 */
+    cursor:pointer;
+    /* 有點圓弧狀 */
+    border-radius: 10px;
+}
+
+
+
+ 
+.instrument .menu-item {
+  width: 590px; 
+  text-decoration: none;
+  list-style: none;
+  box-shadow:0 10px 10px black;
+
+}
+
+ 
+.instrument .menu-item2 {
+    background: #fff;
+    width: 900px; 
+    text-decoration: none;
+    list-style: none;
+    box-shadow:0 10px 10px black;
+  }
+
+.instrument .menu-item h3 {
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0px;
+    background: #000000;
+    height:80px;
+    text-align: center;
+
+  }
+  
+
+
+  
+/*Menu Header Styles*/
+.instrument .menu-item h4 {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 7px 12px;
+  background: #fffca9;
+  
+  border:1px solid black;
+  /* 換一個點擊樣式 */
+  cursor:pointer;
+  /* 有點圓弧狀 */
+  border-radius: 10px;
+
+}
+
+/* 這個輸入下去就會閉合應該是 */
+.instrument .menu-item ul {
+    background: #ffffff;
+    font-size: 13px;
+    line-height: 30px;
+    height: 0px; /*Collapses the menu*/
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0px;
+    list-style: none;
+
+}
+
+.instrument .menu-item ul a {
+    height:300px;
+    width:550px;
+    margin:10px;
+    object-fit:cover;
+
+}
+
+.instrument .menu-item ul img {
+    height:300px;
+    object-fit:cover;
+
+}
+
+
+.instrument .menu-item:hover ul {
+  height: 300px;
+  width:auto;
+}
+
+
+.software .heading{
+    box-shadow:0 10px 10px black;
+    text-align: center;
+    padding:10px;
+    font-size: 40px;
+    margin-bottom:10px;
+    padding:30px;
+    font-family: 'Times New Roman';
+
+}
+
+
+
+
+
+@media (max-width:600px){
+
+
+    /* 第三區 */
+    .speciality .box-container .box{
+        /* flex-direction: column; */
+       flex:1 1 auto;
+    }
+    .speciality .box-container .box .content h3{
+        font-size:26px;
+        color:rgb(9, 152, 152);
+        margin-bottom: 10px;
+    }
+    
+    .speciality .box-container .box .content p{
+        font-size:16px;
+        color:rgb(0, 0, 0);
+    }
+
+    .instrument.box-container .box{
+        /* flex-direction: column; */
+       flex:1 1 auto;
+    }
+
+}
+
+
